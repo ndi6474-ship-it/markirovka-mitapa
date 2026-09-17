@@ -1,0 +1,152 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Ключевые моменты митапа по маркировке</title>
+<style>
+  :root{--bg-deep:#0d0518;--bg-mid:#1a0b30;--bg-purple:#2e1065;--violet-glow:#7c3aed;--pink-glow:#e879f9;--mint-glow:#5eead4;--card-bg:rgba(255,255,255,0.045);--card-border:rgba(196,181,253,0.18);--ink:#f3eefc;--muted:#b9aed6;--radius:20px;}
+  *{box-sizing:border-box;}
+  html,body{margin:0;padding:0;}
+  body{font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',Roboto,Helvetica,Arial,sans-serif;background:radial-gradient(circle at 15% 8%, rgba(124,58,237,0.35), transparent 45%),radial-gradient(circle at 85% 20%, rgba(232,121,249,0.18), transparent 40%),radial-gradient(circle at 50% 90%, rgba(94,234,212,0.10), transparent 50%),linear-gradient(160deg, var(--bg-deep) 0%, var(--bg-mid) 45%, var(--bg-purple) 100%);background-attachment:fixed;color:var(--ink);line-height:1.65;overflow-x:hidden;position:relative;}
+  body::before{content:"";position:fixed;inset:0;background-image:radial-gradient(1px 1px at 10% 20%, #fff, transparent),radial-gradient(1px 1px at 80% 10%, #fff, transparent),radial-gradient(1px 1px at 60% 70%, #fff, transparent),radial-gradient(1px 1px at 30% 85%, #fff, transparent),radial-gradient(1px 1px at 90% 60%, #fff, transparent),radial-gradient(1px 1px at 45% 35%, #fff, transparent);opacity:0.5;pointer-events:none;z-index:0;}
+  .topnav{max-width:1160px;margin:0 auto;padding:26px 24px 0;display:flex;align-items:center;justify-content:space-between;position:relative;z-index:2;}
+  .brand-mark{display:flex;align-items:center;gap:10px;font-weight:800;letter-spacing:.02em;color:var(--ink);font-size:15px;}
+  .brand-mark .dot{width:26px;height:26px;border-radius:50%;background:radial-gradient(circle at 35% 30%, var(--pink-glow), var(--violet-glow));box-shadow:0 0 18px var(--pink-glow);}
+  .nav-links{display:flex;gap:26px;font-size:13px;color:var(--muted);letter-spacing:.03em;}
+  .nav-links span{cursor:default;}
+  .hero{max-width:1160px;margin:0 auto;padding:50px 24px 40px;position:relative;z-index:2;display:flex;align-items:center;justify-content:space-between;gap:36px;flex-wrap:wrap;}
+  .hero-text{flex:1 1 480px;min-width:280px;}
+  .hero-visual{flex:1 1 320px;min-width:260px;display:flex;justify-content:center;align-items:center;position:relative;}
+  .hero-visual::before{content:"";position:absolute;width:120%;height:120%;background:radial-gradient(circle, rgba(232,121,249,0.22), transparent 65%);filter:blur(10px);z-index:0;}
+  .hero-visual img{max-width:78%;width:100%;height:auto;position:relative;z-index:1;filter:drop-shadow(0 20px 50px rgba(124,58,237,0.5));animation:float 5s ease-in-out infinite;}
+  @keyframes float{0%,100%{transform:translateY(0px);}50%{transform:translateY(-14px);}}
+  .hero-tag{display:inline-block;font-size:12.5px;text-transform:uppercase;letter-spacing:.12em;color:var(--mint-glow);border:1px solid rgba(94,234,212,0.4);padding:6px 16px;border-radius:999px;background:rgba(94,234,212,0.06);margin-bottom:22px;}
+  .hero h1{font-size:clamp(30px,4.8vw,52px);font-weight:800;margin:0 0 20px;line-height:1.08;letter-spacing:-.01em;background:linear-gradient(100deg,#fff 20%, var(--pink-glow) 55%, var(--violet-glow) 90%);-webkit-background-clip:text;background-clip:text;-webkit-text-fill-color:transparent;}
+  .hero p.sub{max-width:520px;color:var(--muted);font-size:16px;margin:0 0 30px;}
+  .cta-row{display:flex;gap:16px;flex-wrap:wrap;}
+  .btn{display:inline-flex;align-items:center;gap:8px;padding:14px 28px;font-weight:700;font-size:14px;border-radius:10px;text-decoration:none;transform:skewX(-6deg);transition:transform .2s ease, box-shadow .2s ease;letter-spacing:.02em;}
+  .btn span{display:inline-block;transform:skewX(6deg);}
+  .btn:hover{transform:skewX(-6deg) translateY(-2px);}
+  .btn-primary{background:linear-gradient(90deg, var(--pink-glow), var(--violet-glow));color:#fff;box-shadow:0 8px 26px rgba(232,121,249,0.35);}
+  .btn-ghost{background:linear-gradient(90deg, var(--mint-glow), #22d3ee);color:#04231f;box-shadow:0 8px 26px rgba(94,234,212,0.3);}
+  .wrap{max-width:1100px;margin:0 auto;padding:10px 24px 100px;position:relative;z-index:2;}
+  .panel{background:var(--card-bg);border:1px solid var(--card-border);border-radius:var(--radius);padding:34px 30px;margin-top:26px;backdrop-filter:blur(14px);position:relative;overflow:hidden;}
+  .panel::before{content:"";position:absolute;top:-60px;right:-60px;width:220px;height:220px;background:radial-gradient(circle, rgba(232,121,249,0.18), transparent 70%);pointer-events:none;}
+  .panel-head{display:flex;align-items:center;gap:14px;margin-bottom:18px;}
+  .panel-num{flex:0 0 auto;width:42px;height:42px;border-radius:12px;display:flex;align-items:center;justify-content:center;font-weight:800;font-size:16px;color:#fff;background:linear-gradient(135deg, var(--violet-glow), var(--pink-glow));box-shadow:0 0 20px rgba(124,58,237,0.5);}
+  .panel-head h2{margin:0;font-size:23px;font-weight:800;color:#fff;letter-spacing:.005em;}
+  em{font-style:italic;color:var(--mint-glow);font-weight:600;}
+  .key{text-transform:uppercase;font-weight:800;color:var(--pink-glow);letter-spacing:.02em;text-shadow:0 0 14px rgba(232,121,249,0.4);}
+  p{color:var(--muted);margin:0 0 14px;font-size:15.5px;}
+  .highlight{background:linear-gradient(90deg, rgba(124,58,237,0.18), rgba(232,121,249,0.08));border-left:3px solid var(--pink-glow);padding:16px 20px;border-radius:12px;margin:16px 0;font-size:15px;color:#fff;}
+  .chain-flow{display:flex;flex-wrap:wrap;justify-content:center;align-items:center;gap:12px;margin:24px 0;}
+  .chain-node{background:rgba(255,255,255,0.06);border:1px solid var(--card-border);color:#fff;padding:13px 22px;border-radius:12px;font-weight:800;font-size:15px;box-shadow:0 0 24px rgba(124,58,237,0.25);}
+  .chain-arrow{color:var(--mint-glow);font-size:22px;font-weight:700;}
+  ul.points{margin:14px 0;padding-left:22px;}
+  ul.points li{margin-bottom:12px;font-size:15.5px;color:var(--muted);}
+  .rule-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:18px;margin-top:20px;}
+  .rule-card{background:rgba(255,255,255,0.05);border:1px solid var(--card-border);border-radius:14px;padding:20px;}
+  .rule-card .num-badge{display:inline-flex;align-items:center;justify-content:center;width:30px;height:30px;border-radius:8px;background:linear-gradient(135deg, var(--mint-glow), #22d3ee);color:#04231f;font-weight:800;font-size:14px;margin-bottom:10px;}
+  .rule-card h3{margin:0 0 8px;font-size:15.5px;color:#fff;}
+  .rule-card p{margin:0;font-size:13.8px;}
+  .case-box{border:1.5px dashed rgba(94,234,212,0.5);border-radius:14px;padding:18px 20px;margin-top:16px;background:rgba(94,234,212,0.05);}
+  .case-box .case-label{font-size:12px;text-transform:uppercase;font-weight:800;color:var(--mint-glow);letter-spacing:.05em;margin-bottom:8px;display:block;}
+  .case-box p{color:#e6faf3;margin:0;}
+  .final-list{display:flex;flex-direction:column;gap:16px;margin-top:18px;}
+  .final-item{display:flex;gap:16px;align-items:flex-start;}
+  .final-item .fi-num{flex:0 0 auto;width:36px;height:36px;border-radius:10px;background:linear-gradient(135deg, var(--violet-glow), var(--pink-glow));display:flex;align-items:center;justify-content:center;font-weight:800;color:#fff;box-shadow:0 0 16px rgba(124,58,237,0.4);}
+  .final-item p{margin:0;font-size:15.5px;color:var(--muted);}
+  .footer-note{text-align:center;padding:40px 20px 20px;color:var(--muted);font-size:13px;position:relative;z-index:2;}
+  .footer-note .brand{color:var(--pink-glow);font-weight:700;}
+  @media (max-width:640px){.nav-links{display:none;}.hero{padding:40px 18px 30px;}.panel{padding:24px 20px;}.rule-grid{grid-template-columns:1fr;}.chain-node{font-size:13px;padding:10px 16px;}.panel-head h2{font-size:19px;}.btn{padding:12px 22px;font-size:13px;}}
+  @media (max-width:900px){.hero{flex-direction:column-reverse;}.hero-text{text-align:left;}}
+</style>
+</head>
+<body>
+<div class="topnav">
+  <div class="brand-mark"><span class="dot"></span> Митап · Маркировка</div>
+  <div class="nav-links"><span>Обзор</span><span>Роли</span><span>Договоры</span><span>Сборы</span><span>Выводы</span></div>
+</div>
+<div class="hero">
+  <div class="hero-text">
+    <span class="hero-tag">Ключевые моменты митапа</span>
+    <h1>Маркировка рекламы: что нужно знать каждому</h1>
+    <p class="sub">Главное из обсуждения: цепочка РД → РА → РР, кто "ведёт" токен, зачем нужен изначальный договор и почему нельзя откладывать отчётность на потом.</p>
+    <div class="cta-row">
+      <a class="btn btn-primary" href="https://cp.webpractik.ru/bitrix/tools/disk/focus.php?objectId=387250&cmd=show&action=showObjectInGrid&ncc=1" target="_blank" rel="noopener"><span>Смотреть запись митапа</span></a>
+      <a class="btn btn-ghost" href="#panels"><span>Ключевые моменты</span></a>
+    </div>
+  </div>
+  <div class="hero-visual">
+    <img src="analytics-icon.png" alt="Иконка аналитики маркировки">
+  </div>
+</div>
+<div class="wrap" id="panels">
+  <div class="panel">
+    <div class="panel-head"><span class="panel-num">1</span><h2>Что такое маркировка</h2></div>
+    <p>Маркировка — это <span class="key">оформление интернет-рекламы по закону</span>. Любая реклама должна быть оформлена так, чтобы было понятно, <em>что это реклама</em> и <em>кто рекламодатель</em>.</p>
+    <div class="highlight">Две части: <em>видимая</em> — пометка «Реклама» и данные рекламодателя прямо на публикации, и <em>техническая</em> — кабинет в ОРД, токен, статистика, отчётность.</div>
+    <div class="case-box"><span class="case-label">Пример разметки</span><p>Erid: 123456789. Реклама. ПАО «Промсвязьбанк», ИНН 1234567890</p></div>
+  </div>
+  <div class="panel">
+    <div class="panel-head"><span class="panel-num">2</span><h2>Зачем это нужно</h2></div>
+    <p>Маркировка делает рекламу <span class="key">прозрачной</span> — и для налоговой, и для всех участников цепочки: кто заказал, кто оформил, кто разместил, через кого шли деньги.</p>
+    <div class="chain-flow"><div class="chain-node">РД</div><div class="chain-arrow">→</div><div class="chain-node">РА</div><div class="chain-arrow">→</div><div class="chain-node">РР</div></div>
+    <p><em>Простыми словами:</em> недостаточно просто выложить пост — нужно уметь подтвердить, на каком основании он вышел, чтобы не получить штраф.</p>
+  </div>
+  <div class="panel">
+    <div class="panel-head"><span class="panel-num">3</span><h2>Кто отвечает за маркировку</h2></div>
+    <p>Правильная организация процесса — не «агентство всё сделает», а <span class="key">заранее согласованная схема</span> по каждому шагу.</p>
+    <ul class="points">
+      <li><em>Договор</em> — работаем в кабинете ОРД по договору с клиентом: он "ведёт" токен, по нему регистрируем креатив, получаем erid, сдаём акт.</li>
+      <li><em>Передача площадке</em> — отдаём креатив, токен, пометку «Реклама» и данные рекламодателя. Важно, чтобы креатив <span class="key">не изменили</span> до публикации.</li>
+      <li><em>Отчётность</em> — в конце месяца подаём акт в ОРД: площадка, период, показы, сумма — далее всё уходит в ЕРИР.</li>
+    </ul>
+    <div class="highlight">Токен привязан к конкретному варианту рекламы: изменили текст или картинку — это <span class="key">новый креатив и новый токен</span>.</div>
+  </div>
+  <div class="panel">
+    <div class="panel-head"><span class="panel-num">4</span><h2>Важные нюансы по срокам</h2></div>
+    <p>Пока пост с токеном доступен в интернете, по нему <span class="key">каждый месяц нужна статистика</span> — даже если деньги давно заплачены. Та же логика с SEO-статьями.</p>
+    <div class="highlight">До запуска договариваемся о трёх вещах: <em>сколько материал будет опубликован</em>, <em>как получать статистику</em> и <em>как и когда его удалят</em>.</div>
+    <div class="case-box"><span class="case-label">Железное правило</span><p>По каждому токену отчитываемся <span class="key">один раз</span>. Если токен уже был в отчётности — второй раз использовать его в расходах нельзя.</p></div>
+  </div>
+  <div class="panel">
+    <div class="panel-head"><span class="panel-num">5</span><h2>Кто за площадки, а кто за агентство</h2></div>
+    <p>Агентство отчитывается за токены и доходы от клиента, но <span class="key">не отчитывается за площадки</span> — те показывают свой доход в ЕРИР самостоятельно.</p>
+    <div class="case-box"><span class="case-label">Кейс из практики</span><p>Площадка присылала замечания о неразмещённых расходах. Информация пришла поздно — расход внесли в конце квартала, почти перед блокировкой актов. <em>такие ситуации лучше не допускать.</em></p></div>
+  </div>
+  <div class="panel">
+    <div class="panel-head"><span class="panel-num">6</span><h2>Изначальный и доходный договор</h2></div>
+    <p>Если клиент приходит через другое агентство — в системе нужны <span class="key">два договора</span>.</p>
+    <div class="case-box"><span class="case-label">Кейс: ПСБ → «Энсайн» → мы</span><p><em>Изначальный договор</em> — между ПСБ и «Энсайн», чтобы система видела всю цепочку.<br><em>Доходный договор</em> — между «Энсайн» и нами, по нему регистрируется и закрывается токен.</p></div>
+    <p>Если договор напрямую с рекламодателем — изначальный договор <span class="key">не нужен</span>: доходный договор с клиентом сам является основным для токена.</p>
+  </div>
+  <div class="panel">
+    <div class="panel-head"><span class="panel-num">7</span><h2>Зона ответственности и главный риск</h2></div>
+    <p>Отчётность по токенам сдаётся до <span class="key">30 числа</span> каждого месяца — именно тогда видны все дыры в статистике и размещениях.</p>
+    <div class="highlight">Критично, чтобы про запуск рекламы и правки говорили <span class="key">до, а не после</span>. Иначе в конце месяца — хвост из ссылок, площадок и правок в актах.</div>
+    <p><em>Почему это не просто "галочка":</em> все договоры, акты и токены влияют на 3% сбор в ЕРИР — ошибку на этапе выбора договора сложно исправить без последствий.</p>
+  </div>
+  <div class="panel">
+    <div class="panel-head"><span class="panel-num">8</span><h2>3% сбор — в чём суть</h2></div>
+    <div class="rule-grid">
+      <div class="rule-card"><div class="num-badge">1</div><h3>Обычный договор за услуги</h3><p>Клиент платит одной суммой. Для системы вся сумма — расход на рекламу, значит 3% считают со <span class="key">всей суммы</span>.</p></div>
+      <div class="rule-card"><div class="num-badge">2</div><h3>Агентский договор</h3><p>Деньги делятся: расходы на рекламу отдельно, <em>агентское вознаграждение</em> отдельно. 3% считают в первую очередь с расходной части.</p></div>
+    </div>
+    <div class="highlight">Важно не название договора, а <span class="key">как в нём записаны деньги</span> — одной суммой или раздельно.</div>
+  </div>
+  <div class="panel" id="final">
+    <div class="panel-head"><span class="panel-num">9</span><h2>Практические выводы</h2></div>
+    <div class="final-list">
+      <div class="final-item"><div class="fi-num">1</div><p><em>Сначала роли, потом креатив.</em> Разбираемся, кто рекламодатель, кто агентство, кто площадка и какой договор будет <span class="key">вести токен</span>.</p></div>
+      <div class="final-item"><div class="fi-num">2</div><p><em>Роли до запуска.</em> Кто регистрирует креатив, кто отдаёт токен площадке, кто собирает статистику. Сразу договариваемся, когда пост удалят.</p></div>
+      <div class="final-item"><div class="fi-num">3</div><p><em>Всё фиксируем письменно.</em> Если по токену есть спор — не решаем на словах. Письма защищают, когда кто-то забудет "как всё было".</p></div>
+      <div class="final-item"><div class="fi-num">4</div><p><em>Помним про сроки.</em> Отчёт по креативам — до <span class="key">30 числа</span>. После 20 числа статистика должна быть уже передана.</p></div>
+      <div class="final-item"><div class="fi-num">5</div><p><em>Деньги и токен — одно решение.</em> Как только размещение попало в поле маркировки, по нему могут посчитать <span class="key">дополнительные 3%</span>.</p></div>
+    </div>
+  </div>
+</div>
+<div class="footer-note">Ключевые моменты подготовлены по итогам митапа · <span class="brand">Маркировка интернет-рекламы</span></div>
+</body>
+</html>
